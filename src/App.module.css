@@ -1,0 +1,157 @@
+.mainwrapper {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
+}
+
+.mainwrapper h1 {
+  margin: 0;
+  padding: 1% 0%;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.mainwrapper div.interior {
+  background: white;
+  margin: 3%;
+  border-radius: 5px;
+  height: 63vh;
+  padding: 3%;
+  text-align: center;
+}
+
+.mainwrapper p:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mainwrapper span.spanadd {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.mainwrapper span.spanadd:hover {
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mainwrapper .addtolistwrapper {
+  width: 100%;
+  display: flex;
+  padding: 1% 2%;
+}
+
+.mainwrapper .addtolistwrapper input {
+  width: 90%;
+  padding: 1% 1%;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  outline: none;
+}
+
+.mainwrapper .addtolistwrapper button {
+  width: 10%;
+  padding: 1% 1%;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  outline: none;
+}
+
+.mainwrapper .addtolistwrapper button:hover,
+.mainwrapper .addtolistwrapper input:focus {
+  border-color: black;
+}
+
+.mainwrapper div.listwrapper {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.mainwrapper div.list {
+  width: 100%;
+  padding: 1% 2%;
+}
+
+.mainwrapper div.list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.mainwrapper div.list li {
+  width: 100%;
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.mainwrapper div.list li span::first-letter {
+  text-transform: capitalize;
+}
+
+.mainwrapper div.list li div {
+  display: flex;
+}
+
+.mainwrapper div.list li span {
+  justify-content: flex-start;
+  width: 90%;
+  text-align: left;
+}
+
+.mainwrapper div.list li button {
+  width: 10%;
+  border: 0.4px solid grey;
+  background: white;
+  font-weight: 700;
+}
+
+.mainwrapper div.list li button:hover {
+  background: black;
+  border-color: white;
+  color: white;
+}
+
+.mainwrapper div.usernamewrapper h1 {
+  color: black;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.mainwrapper div.usernamewrapper input {
+  padding: 0.5% 1%;
+  border: 0.5px solid grey;
+}
+
+.mainwrapper div.usernamewrapper button {
+  padding: 0.5% 2%;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+  border: 0.5px solid black;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.mainwrapper div.usernamewrapper button:disabled {
+  border-color: grey;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.mainwrapper div.usernamewrapper span {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+}
