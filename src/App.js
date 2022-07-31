@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import AddToList from "./Components/AddToList";
+import DeleteButton from "./Components/DeleteButton";
 
-function App() {
+const MainScreen = () => {
+  const [todolist, setTodolist] = useState(
+    JSON.parse(localStorage.getItem("to_do"))
+      ? JSON.parse(localStorage.getItem("to_do"))
+      : []
+  );
+
+  const addToDoToList = async (todo) => {
+    await setTodolist((prevtodo) => {
+      return [...prevtodo, todo];
+    });
+  };
+
+  const removeToDoFromList = (index) => {
+    console.log(index);
+    var tempToDoList = todolist;
+    tempToDoList = tempToDoList.filter((x, inde) => inde !== index);
+    setTodolist(tempToDoList);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("to_do", JSON.stringify(todolist));
+  }, [todolist]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AddToList addToDoToList={addToDoToList} />
+      <div>
+        {todolist.length > 0 ? (
+          <ul>
+            {todolist.map((listitem, index) => {
+              return (
+                <li key={index}>
+                  {listitem}{" "}
+                  <DeleteButton
+                    removeToDoFromList={removeToDoFromList}
+                    index={index}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>Your list is empty.Add an TASK TO DO.</p>
+        )}
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default MainScreen;
